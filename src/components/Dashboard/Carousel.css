@@ -1,0 +1,60 @@
+/* -------- Carousel Container -------- */
+.swiper {
+  width: 90%;
+  height: 260px;
+  margin: 20px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* -------- Slide Images -------- */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------- Navigation Arrows (no circle) -------- */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+  background: none !important;     /* ❌ remove black circle background */
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Arrow icon size */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 26px !important;      /* bigger clean arrows */
+  text-shadow: 0px 0px 6px rgba(0,0,0,0.7); /* optional glow for visibility */
+}
+
+/* -------- Pagination Dots -------- */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00b4ff !important;
+  opacity: 1;
+}
+
+/* -------- Responsive for Mobiles -------- */
+@media (max-width: 600px) {
+  .swiper {
+    width: 95%;
+    height: 200px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 22px !important;
+  }
+}
