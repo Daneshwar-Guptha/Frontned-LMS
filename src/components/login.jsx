@@ -42,7 +42,7 @@ const Login = () => {
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login</h1>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-          {/* Username input */}
+         
           <div>
             <input
               type="text"
