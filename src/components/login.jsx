@@ -1,38 +1,38 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { updateDetails } from "../redux/userSlice";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const navigateSignup = () => {
-    navigate("/signup");
-  };
+  const navigateSignup = () => navigate("/signup");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const loginData = { username, email, password };
-
     try {
       const response = await axios.post(
         "http://localhost:2000/auth/login",
-        loginData,
+        { email, password },
         { withCredentials: true }
       );
 
-      if (response.status === 200) {
-        alert(`Logged in as: ${username || email}`);
-        navigate("/Dashboard"); 
-      }
+     
+
+      // update Redux state
+      dispatch(updateDetails(response.data.userData));
+
+      alert(`Logged in as: ${email}`);
+      navigate("/Dashboard");
+
     } catch (err) {
-      alert(err.response?.data?.message || "Login failed. Please try again.");
+      alert(err.response?.data?.error || "Login failed");
     }
   };
 
@@ -42,18 +42,7 @@ const Login = () => {
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login</h1>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-         
-          <div>
-            <input
-              type="text"
-              placeholder="Enter your username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-            />
-          </div>
 
-          {/* Email input */}
           <div>
             <input
               type="email"
@@ -61,11 +50,10 @@ const Login = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
             />
           </div>
 
-          {/* Password input */}
           <div>
             <input
               type="password"
@@ -73,35 +61,24 @@ const Login = () => {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
             />
           </div>
 
-          {/* Login button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            className="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700"
           >
             Login
           </button>
 
-          {/* Navigation to Signup */}
           <p className="text-sm text-center text-gray-600">
-            Don’t have an account?{" "}
-            <span
-              className="text-blue-600 hover:underline cursor-pointer"
-              onClick={navigateSignup}
-            >
+            Don’t have an account?
+            <span className="text-blue-600 hover:underline cursor-pointer" onClick={navigateSignup}>
               Sign Up
             </span>
           </p>
 
-          <p
-            className="text-sm text-blue-600 hover:underline text-center cursor-pointer mt-2"
-            onClick={() => navigate("/forgot-password")}
-          >
-            Forgot password?
-          </p>
         </form>
       </div>
     </div>

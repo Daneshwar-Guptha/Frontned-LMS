@@ -8,6 +8,9 @@ const Navbar = () => {
     Cookies.remove("token")
     navigate("/")
   }
+  const profile = ()=>{
+    navigate("/Profile");
+  }
   return (
     <nav className="navbar">
      <img className="logo-img" src= "https://cdn-icons-png.flaticon.com/512/16847/16847436.png"/>
@@ -19,7 +22,7 @@ const Navbar = () => {
         <li>Assignments</li>
         <li>Exams & Results</li>
         <li>Certificates</li>
-        <li>Profile</li>
+        <li onClick={profile}>Profile</li>
         <li className="logout" onClick={logout}>Logout</li>
       </ul>
     </nav>

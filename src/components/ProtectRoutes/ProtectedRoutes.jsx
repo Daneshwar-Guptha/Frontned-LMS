@@ -1,9 +1,13 @@
-import Cookies from 'js-cookie';
+
 import { Navigate, Outlet } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
+import { useSelector } from 'react-redux';
 const ProtectRoutes = () => {
+    const {userData} = useSelector((store)=>store.user);
+    
+    
 
-    return Cookies.get("token") ? <>
+    return userData ? <>
         <Navbar />
         <Outlet />
 
