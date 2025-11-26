@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateDetails } from "../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+ 
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,11 +23,12 @@ const Login = () => {
         { email, password },
         { withCredentials: true }
       );
-
+      console.log(response)
      
 
       // update Redux state
       dispatch(updateDetails(response.data.userData));
+     
 
       alert(`Logged in as: ${email}`);
       navigate("/Dashboard");
