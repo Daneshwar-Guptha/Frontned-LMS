@@ -1,0 +1,50 @@
+/* -------- Trending Courses Heading -------- */
+.dashboard-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;               /* Dark modern color */
+  margin: 20px 0 15px 0;     /* Top + bottom spacing */
+  padding-left: 5%;          /* Align with 90% carousel */
+  letter-spacing: 1px;
+}
+
+/* Optional: Add subtle underline */
+.dashboard-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #00b4ff;       /* Accent color */
+  margin-top: 6px;
+  border-radius: 2px;
+}
+.dashboard-heading {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+/* Grid layout for courses */
+
+
+/* Loading & empty states */
+.loading-text,
+.empty-text {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-top: 40px;
+}
+.dashboard-container {
+  width: 90%;
+  margin: 0 auto;        /* equal left & right margin */
+}
+
+/* Courses grid */
+.courses-container {
+  width: 100%;           /* IMPORTANT */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}

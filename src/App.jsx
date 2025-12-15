@@ -2,7 +2,7 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Login from './components/login'
-import Dashboard from './components/Dashboard/Dashboard'
+import Dashboard from './components/Dashboard/MainDashBoard/Dashboard'
 import ProtectRoutes from './components/ProtectRoutes/ProtectedRoutes'
 import Profile from './components/Profile/profile'
 
