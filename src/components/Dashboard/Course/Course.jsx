@@ -1,9 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import "./Course.css";
 
+
 const Course = ({ courseData }) => {
+  const navigate = useNavigate()
   if (!courseData) return null;
 
-  const { title, description, thumbnail, price, isPublished } = courseData;
+
+  const { title, description, thumbnail, price, isPublished ,_id} = courseData;
+  
+  function viewDeatils(){
+    navigate(`/viewDetails/${_id}`)
+
+  }
 
   return (
     <div className="course-card">
@@ -28,7 +37,7 @@ const Course = ({ courseData }) => {
 
         <div className="course-footer">
           <span className="course-price">₹{price}</span>
-          <button className="course-btn">View Details</button>
+          <button className="course-btn" onClick={viewDeatils}>View Details</button>
         </div>
       </div>
     </div>

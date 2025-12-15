@@ -1,0 +1,295 @@
+/* ===== PAGE ===== */
+.course-details-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 32px 20px 120px;
+  background: #f4f6fb;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.page-message {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+/* ===== HERO ===== */
+.course-hero {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.course-cover {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.course-hero-content h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.course-hero-content p {
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+/* ===== CONTENT ===== */
+.course-content {
+  margin-top: 48px;
+}
+
+.course-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* ===== SECTION ===== */
+.section-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 6px solid #2563eb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.section-card h3 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+/* ===== LESSON ===== */
+.lesson-wrapper {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.lesson-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border-left: 4px solid #22c55e;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.lesson-item:hover {
+  background: #ecfeff;
+  transform: translateX(4px);
+}
+
+.lesson-title {
+  font-weight: 500;
+}
+
+.lesson-duration {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== DROPDOWN ===== */
+.lesson-dropdown {
+  margin-top: 6px;
+  margin-left: 14px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border-left: 3px solid #3b82f6;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.resource-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #eef2ff;
+  color: #1e40af;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.resource-btn:hover {
+  background: #e0e7ff;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 14px;
+  padding: 16px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.media-player {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+}
+
+/* ===== ENROLL BAR ===== */
+.enroll-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.enroll-price {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.enroll-text {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.enroll-btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .course-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .media-player {
+    height: 300px;
+  }
+
+  .enroll-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .enroll-btn {
+    width: 100%;
+  }
+}
+/* ===== POPUP OVERLAY ===== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+/* ===== POPUP BOX ===== */
+.popup {
+  background: #ffffff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  animation: popupScale 0.25s ease;
+}
+
+.popup h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+/* ===== STATUS COLORS ===== */
+.popup.success h3 {
+  color: #16a34a;
+}
+
+.popup.error h3 {
+  color: #dc2626;
+}
+
+/* ===== BUTTON ===== */
+.popup-btn {
+  padding: 10px 26px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes popupScale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

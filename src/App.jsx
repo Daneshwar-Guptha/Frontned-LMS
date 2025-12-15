@@ -5,6 +5,7 @@ import Login from './components/login'
 import Dashboard from './components/Dashboard/MainDashBoard/Dashboard'
 import ProtectRoutes from './components/ProtectRoutes/ProtectedRoutes'
 import Profile from './components/Profile/profile'
+import ViewDeatils from './components/Dashboard/ViewDetails/ViewDeatils'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 
           <Route path='/Dashboard' element={<Dashboard/>} />
           <Route path ='/Profile' element={<Profile/>} />
+          <Route path='/viewDetails/:courseId' element={<ViewDeatils/>}/>
 
         </Route>
       </Routes>

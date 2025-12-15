@@ -27,7 +27,7 @@ const Dashboard = () => {
   useEffect(() => {
     getCourseData();
   }, []);
-  console.log(courseData);
+ 
 
  return (
   <>
