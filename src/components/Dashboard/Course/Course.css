@@ -64,6 +64,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+   gap: 12px;
 }
 
 .course-price {
@@ -85,4 +86,13 @@
 
 .course-btn:hover {
   background: #1f63d6;
+}
+
+.course-footer {
+  display: flex;
+  justify-content: space-between; /* ✅ keep left & right */
+  align-items: center;
+  padding-top: 12px;              /* ✅ vertical spacing */
+  margin-top: 8px;                /* ✅ space from description */
+  border-top: 1px solid #eee;     /* ✅ visual separation */
 }

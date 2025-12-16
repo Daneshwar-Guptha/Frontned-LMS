@@ -14,13 +14,16 @@ const Navbar = () => {
   const dashboard = ()=>{
     navigate("/dashboard")
   }
+  const Mycourse = ()=>{
+    navigate("/mycourse")
+  }
   return (
     <nav className="navbar">
      <img className="logo-img" src= "https://cdn-icons-png.flaticon.com/512/16847/16847436.png"/>
 
       <ul className="nav-links">
         <li onClick={dashboard}>Dashboard</li>
-        <li>My Courses</li>
+        <li onClick={Mycourse}>My Courses</li>
         <li>Live Classes</li>
         <li>Assignments</li>
         <li>Exams & Results</li>
