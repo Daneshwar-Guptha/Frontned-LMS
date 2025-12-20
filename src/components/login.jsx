@@ -23,7 +23,7 @@ const Login = () => {
         { email, password },
         { withCredentials: true }
       );
-      console.log(response)
+      
      
 
       // update Redux state
