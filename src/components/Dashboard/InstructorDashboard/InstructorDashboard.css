@@ -1,0 +1,38 @@
+.instructor-dashboard {
+  background: #0d1a2b;
+  min-height: 100vh;
+  padding: 40px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-header {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-card {
+  background: #12223a;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.stat-title {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.stat-value {
+  font-size: 38px;
+  font-weight: 700;
+  margin-top: 10px;
+}

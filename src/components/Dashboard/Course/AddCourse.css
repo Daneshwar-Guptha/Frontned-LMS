@@ -1,0 +1,78 @@
+.addcourse-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background: #0d1a2b;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.addcourse-form {
+  width: 420px;
+  background: #12223a;
+  padding: 30px;
+  border-radius: 18px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.addcourse-form h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.addcourse-form input,
+.addcourse-form textarea {
+  width: 100%;
+  background: #0e1828;
+  border: 1px solid #2c3e55;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.addcourse-form input:focus,
+.addcourse-form textarea:focus {
+  border-color: #00eaff;
+  outline: none;
+}
+
+.addcourse-form label {
+  display: block;
+  margin-bottom: 6px;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.preview-img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 10px 0;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.addcourse-form button {
+  width: 100%;
+  padding: 12px;
+  background: #00eaff;
+  color: #001a29;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.addcourse-form button:hover {
+  background: #05c8d9;
+}
+
+.error {
+  background: rgba(255,0,0,0.2);
+  border-left: 4px solid #ff3838;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateDetails } from "../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,15 +22,20 @@ const Login = () => {
         { email, password },
         { withCredentials: true }
       );
-      
-     
 
-      // update Redux state
-      dispatch(updateDetails(response.data.userData));
-     
+      const user = response.data.userData;   // ⭐ FIX
 
-      alert(`Logged in as: ${email}`);
-      navigate("/Dashboard");
+      // update redux state
+      dispatch(updateDetails(user));
+
+      alert(`Logged in as: ${user.email}`);
+
+      // ⭐ redirect based on role
+      if (user.role === "user") {
+        navigate("/dashboard", { replace: true });
+      } else if (user.role === "instructor") {
+        navigate("/instructor/dashboard", { replace: true });
+      }
 
     } catch (err) {
       alert(err.response?.data?.error || "Login failed");
@@ -41,10 +45,11 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-sm">
-        <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login</h1>
+        <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+          Login
+        </h1>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-
           <div>
             <input
               type="email"
@@ -76,11 +81,13 @@ const Login = () => {
 
           <p className="text-sm text-center text-gray-600">
             Don’t have an account?
-            <span className="text-blue-600 hover:underline cursor-pointer" onClick={navigateSignup}>
+            <span
+              className="text-blue-600 hover:underline cursor-pointer"
+              onClick={navigateSignup}
+            >
               Sign Up
             </span>
           </p>
-
         </form>
       </div>
     </div>

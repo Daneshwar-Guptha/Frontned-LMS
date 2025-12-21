@@ -1,0 +1,41 @@
+.course-details-container {
+  background: #0d1a2b;
+  min-height: 100vh;
+  padding: 40px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.course-title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.course-description {
+  max-width: 700px;
+  opacity: 0.85;
+  margin-top: 10px;
+}
+
+.section-heading {
+  margin-top: 40px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.section-box {
+  background: #12223a;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 18px;
+}
+
+.lessons-list {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.lessons-list li {
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
